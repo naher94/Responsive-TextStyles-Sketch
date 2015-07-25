@@ -1,13 +1,18 @@
 @import "library.cocoascript";
 
-var onRun = function(context) {
-  // Context is a dictionary containing a reference to the document, 
+var onRun = function(context)
+{
+  ////Update all values minus fontSize
+  ////fontPostscriptName, textColor, textAlignment, characterSpacing, lineSpacing
+  // Two features a Link Styles and update function
+  
+  // Context is a dictionary containing a reference to the document,
   // the current selection, the plugin, curren URL and more.
-  
-  var doc = context.document;                // the current document (MSDocument)
-  var plugin = context.plugin;          // the plugin (MSPluginBundle)
-  var page = [doc currentPage];         // the current page (MSPage)
-  
+
+  var doc = context.document;// the current document (MSDocument)
+  var plugin = context.plugin;// the plugin (MSPluginBundle)
+  var page = [doc currentPage];// the current page (MSPage)
+
   // create a new group to contain the new layers (MSLayerGroup)
   var group = SketchLib.addLayerGroup(page, {"name": [plugin name] });
 
